@@ -7,11 +7,9 @@ var todoFunctions = {
   // You do not need to understand the implementation of this function.
   generateId: (function() {
     var idCounter = 0;
-
     function incrementCounter() {
       return (idCounter += 1);
     }
-
     return incrementCounter;
   })(),
 
@@ -28,6 +26,11 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
+    var todo= todoFunctions.cloneArrayOfObjects(todos);
+    newTodo={id:todoFunctions.generateId(),description:newTodo,done:false};
+     todo.push(newTodo);
+     return todo;
+    // console.log(todos);
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
