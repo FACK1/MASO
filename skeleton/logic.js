@@ -29,8 +29,9 @@ var todoFunctions = {
     var todo= todoFunctions.cloneArrayOfObjects(todos);
     newTodo={id:todoFunctions.generateId(),description:newTodo,done:false};
      todo.push(newTodo);
-     return todo;
+     return newTodo;
     // console.log(todos);
+
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
