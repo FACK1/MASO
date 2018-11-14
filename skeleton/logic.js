@@ -29,7 +29,7 @@ var todoFunctions = {
     var todo= todoFunctions.cloneArrayOfObjects(todos);
     newTodo={id:todoFunctions.generateId(),description:newTodo,done:false};
      todo.push(newTodo);
-     return newTodo;
+     return todo;
     // console.log(todos);
 
   },

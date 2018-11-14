@@ -49,14 +49,12 @@
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-       //what does event.preventDefault do?
+        event.preventDefault();
       // what is inside event.target?
-
-      var description = '?'; // event.target ....
-
+      var description = event.target.description.value; // event.target ....
+       var todofun=todoFunctions.addTodo(state,description);
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
-      update(newState);
+      update(todofun);
     });
   }
 
@@ -69,7 +67,6 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement('ul');
-
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
