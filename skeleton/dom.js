@@ -15,9 +15,11 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
+    todoNode.setAttribute("class",'one-item');
     // you will need to use addEventListener
     var dis = document.createElement("p");
     dis.innerHTML = "<p>"+todo.description+"</p>";
+    dis.setAttribute("class",'dis');
     todoNode.appendChild(dis);
     // add span holding description
     // this adds the delete button
@@ -27,6 +29,7 @@
       event.preventDefault();
       update(newState);
     });
+    deleteButtonNode.setAttribute("class",'button-delete');
     todoNode.appendChild(deleteButtonNode);
     // add markTodo button
     var checkdone = document.createElement('button');
@@ -40,7 +43,7 @@
       update(newState);
     });
     todoNode.appendChild(checkdone);
-
+deleteButtonNode.setAttribute("class",'button-done');
     // add classes for css
     return todoNode;
   };
