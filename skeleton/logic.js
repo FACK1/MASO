@@ -36,12 +36,25 @@ var todoFunctions = {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
+    var newTodo= todoFunctions.cloneArrayOfObjects(todos);
+    var todofilter= newTodo.filter((elment)=>{
+    return elment.id != idToDelete;
+  });
+  return todofilter;
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
+    var newTodos = todoFunctions.cloneArrayOfObjects(todos);
+     newTodos.map((x)=>{
+      if (x.id === idToMark){
+
+      return   x.done = !x.done;
+      }
+    })
+    return newTodos;
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
