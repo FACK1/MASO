@@ -31,6 +31,7 @@ var todoFunctions = {
      todo.push(newTodo);
      return todo;
     // console.log(todos);
+
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
