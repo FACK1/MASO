@@ -3,6 +3,7 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
+
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
@@ -43,8 +44,26 @@
       update(newState);
     });
     todoNode.appendChild(checkdone);
-deleteButtonNode.setAttribute("class",'button-done');
+    deleteButtonNode.setAttribute("class",'button-done');
     // add classes for css
+
+    document.getElementById('showalldone').addEventListener('click',function(event) {
+      var newState = todoFunctions.sortTodos(state, 1);
+      event.preventDefault();
+      update(newState);
+    });
+
+    document.getElementById('showdone').addEventListener('click',function(event) {
+       var newState= todoFunctions.sortTodos(state, 2);
+       event.preventDefault();
+      update(newState);
+    });
+
+    document.getElementById('shownotdone').addEventListener('click',function(event) {
+      var newState= todoFunctions.sortTodos(state, 3);
+       event.preventDefault();
+      update(newState);
+    });
     return todoNode;
   };
 

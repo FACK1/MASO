@@ -29,3 +29,11 @@ test('testing markTodo',function(t){
   t.deepEqual(actual,expected,'make mark');
   t.end();
 });
+
+test('testing sort',function(t){
+  var todo=[{id:1, description:"description 1", done:false},{id:1, description:"description 1", done:true}];
+  var actual=todoFunctions.markTodo(todo,1);
+  var expected=[{id:1, description:"description 1", done:true}];
+  t.deepEqual(actual,expected,'make sort');
+  t.end();
+});
