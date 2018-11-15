@@ -3,6 +3,7 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
+
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
@@ -16,6 +17,23 @@
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
     todoNode.setAttribute("class",'one-item');
+
+    var checkdone = document.createElement('button');
+    checkdone.setAttribute("id", todo.id);
+    checkdone.setAttribute("class", 'button-done');
+
+    if (todo.done==true) {
+      checkdone.style.backgroundColor='#000000';
+     }
+    checkdone.addEventListener('click', function(event) {
+      var newState = todoFunctions.markTodo(state, todo.id);
+      update(newState);
+    });
+    todoNode.appendChild(checkdone);
+
+
+
+
     // you will need to use addEventListener
     var dis = document.createElement("p");
     dis.innerHTML = "<p>"+todo.description+"</p>";
@@ -30,21 +48,28 @@
       update(newState);
     });
     deleteButtonNode.setAttribute("class",'button-delete');
+
+    deleteButtonNode.innerHTML = 'delete';
+
     todoNode.appendChild(deleteButtonNode);
     // add markTodo button
-    var checkdone = document.createElement('button');
-    checkdone.setAttribute("id", todo.id);
 
-    if (todo.done==true) {
-      checkdone.style.backgroundColor='#000000';
-     }
-    checkdone.addEventListener('click', function(event) {
-      var newState = todoFunctions.markTodo(state, todo.id);
-      update(newState);
-    });
-    todoNode.appendChild(checkdone);
-deleteButtonNode.setAttribute("class",'button-done');
     // add classes for css
+
+    document.getElementById('showalldone').addEventListener('click',function(event) {
+      var newState = todoFunctions.sortTodos(state, 1);
+update(newState);
+    });
+
+    document.getElementById('showdone').addEventListener('click',function(event) {
+       var newState= todoFunctions.sortTodos(state, 2);
+update(newState);
+    });
+
+    document.getElementById('shownotdone').addEventListener('click',function(event) {
+      var newState= todoFunctions.sortTodos(state, 3);
+update(newState);
+    });
     return todoNode;
   };
 
