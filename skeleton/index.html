@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>tdd todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -12,13 +13,15 @@
       <div id="form-container">
         <form id="add-todo" class='search-input' required >
           <input type="text" name="description" value="" class="input-field" id="dis" required>
-          <input type="submit" name="" value="Submit" class="input-action" id="additem">
+          <input type="submit" name="" value="add" class="input-action" id="additem">
         </form>
       </div>
     </header>
-    <button id = "showdone">done</button>
-    <button id = "shownotdone">not done</button>
-    <button id = "showalldone">all</button>
+    <section class="dones">
+    <button id = "showdone" class="ddone">done</button>
+    <button id = "shownotdone" class="ddone">not done</button>
+    <button id = "showalldone" class="ddone">all</button>
+    </section
     <section>
       <div id = "todo-container">
           <ul>
