@@ -21,6 +21,7 @@ position: absolute;
 top:200px;
 right: auto;
 background-color: rgba(255, 255, 255, 0.5)
+
 }
 
 #form-container {
@@ -36,6 +37,8 @@ border-radius: 31px;
 height: 57px;
 }
 
+
+
 .input-action{
   position: absolute;
 width: 20%;
@@ -46,6 +49,8 @@ right: 54px;
 top: 2px;
 }
 
+
+
 .search-input{
   position: relative;
   display: flex;
@@ -53,22 +58,4 @@ top: 2px;
   flex-direction: row;
   top: 150px;
 
-}
-.one-item{
-  margin:10%;
-  background-color: #E7E3D9;
-  list-style-type: none;
-  border-radius: 25px;
-  display: flex;
-  
-}
-.dis{
-  font-size: 20px;
-  padding: 2%;
-}
-.button-done{
-
-}
-.button-delete{
-  display:
 }
